@@ -1,1 +1,20 @@
-# Lab_Act2
+This README has been designed to help in constructing, and then evaluating, a CRUD (Create, Read, Update, Delete) Application Programming Interface (API) within the constraints of the Express.js framework, interfacing with a MySQL database. Course and student records will be the focus of the CRUD operations the API will be designed to create and manage. Express.js will accept the API’s requests while the MySQL database will be its data repository. The project should provide insights on the functionality of a conventional RESTful API in conjunction with CRUD operations and the instance MySQL database tethered to guarantee data persistence.  
+
+Setting Up the Environment  
+Setting up the development environment should precede the writing of any lines of code. Download and install Postman (if this has not been done already) to provide the user with an API testing interface. MySQL must be acquired and installed on the local server, this can be done using XAMPP. This will give the user a MySQL database server for their data as well as an HTML and PHP server.  
+
+Methodology  
+In Part 1 assume the role of a MySQL database server, which can be done using XAMPP. This is done by naming the database “lab_crud” and within it a table “students” which has columns corresponding with : id, name, email, course, and year level. Ensure the database and any custom tables within it have been set up correctly, as hypothesized within the sanity check framework.
+
+You will first create an Express project and set up its Part 2. Start by making a folder for the project, run npm init -y, and download the necessary packages, which include Express, mysql2, and dotenv. Form the project structure by making folders for controllers, routes, and other configuration files. Then in the .env file, include the MySQL connection parameters: DBHOST, DBUSER, DBPASS, and DBNAME. The db.js file in the config folder will connect the application to MySQL. Then, in server.js, create a basic health check endpoint as part of a code to ensure the server and database are functioning.
+
+You will implement the CRUD functionalities in Part 3. First, install CORS middleware to manage requests from other domains and origins. In the file studentController.js which will serve as the controller for the CRUD functionalities, create the C, R, and U and D functions for adding a student, getting student data, modifying student details, and expunging student data respectively. studentRoutes.js will contain the routes, and you will integrate the routes in server.js. Finally, CORS should be tested to check if the access restrictions will block the application from fully functioning.
+
+In Part 4, you will add the next resource to the CRUD API: courses. Create a new table courses in the database and add columns like id, code, title, units, and created_at. Just like in Part 3, create a courseController.js and a courseRoutes.js to handle CRUD operations for courses. When the routes are set, mount them in server.js. After that, use Postman to test the full cycle CRUD for courses, adding and retrieving as well as updating and deleting records.
+
+Testing and Validation
+In postman, validate that the API works by checking all operations. For each student and course record, test creating, reading, updating, and deleting. Check what happens when you don’t complete a field or give a wrong field as well. Try to add a student that has no name or email or try to view records that are not there; these sorts of actions will help you understand if the API works correctly.
+
+Conclusion  
+In finishing and testing your work on the API, it's time to public the work. First, create a Git repository on the project folder and save the work as a new commit. Upload the project to a GitHub repository, making sure to attach an .env.example file with dummy information for sensitive materials, such as your credentials to the database. In this way, you will have developed a complete CRUD API which you tested with MySQL and Postman and have uploaded to GitHub as a professional developer.
+
